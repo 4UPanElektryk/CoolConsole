@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32314.265
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoolConsole", "CoolConsole\CoolConsole.csproj", "{625033AD-F1A0-4A81-9057-7D889AC35BE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForCoolConsole", "TestForCoolConsole\TestForCoolConsole.csproj", "{80E399BC-93B8-4511-B6EB-AB812DC76040}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{625033AD-F1A0-4A81-9057-7D889AC35BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625033AD-F1A0-4A81-9057-7D889AC35BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625033AD-F1A0-4A81-9057-7D889AC35BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625033AD-F1A0-4A81-9057-7D889AC35BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E399BC-93B8-4511-B6EB-AB812DC76040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E399BC-93B8-4511-B6EB-AB812DC76040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E399BC-93B8-4511-B6EB-AB812DC76040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E399BC-93B8-4511-B6EB-AB812DC76040}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66A39E07-B9E8-4EF9-9AFA-4AA26BC02351}
+	EndGlobalSection
+EndGlobal

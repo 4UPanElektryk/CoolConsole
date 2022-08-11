@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "CoolConsole": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Maciek\\source\\repos\\CoolConsole\\TestForCoolConsole\\bin\\Debug\\TestForCoolConsole.exe"
+    }
+  }
+}
