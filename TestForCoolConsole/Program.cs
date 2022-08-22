@@ -28,13 +28,18 @@ namespace TestForCoolConsole
                 new CheckboxMenuItem("UnselectedCheckbox3", false),
                 new CheckboxMenuItem("UnselectedCheckbox4", false),
                 new CheckboxMenuItem("UnselectedCheckbox5", false),
+                new TextboxMenuItem("TextInput1","wow"),
                 new MenuItem("Submit")
             };
             ReturnCode i = Menu.Show(texts);
-            foreach (var item in i.CheckBoxes)
+            foreach (var item in i.Checkboxes)
             {
                 Console.WriteLine("Setting " + texts[item._Index]._Text);
                 Console.WriteLine("Is set to " + item._Checked);
+            }
+            foreach (var item in i.Textboxes)
+            {
+                Console.WriteLine(item._Text);
             }
             Console.ReadKey();
         }

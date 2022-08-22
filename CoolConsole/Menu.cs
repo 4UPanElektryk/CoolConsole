@@ -16,6 +16,7 @@ namespace CoolConsole
             bool exit = false;
             ReWrite(list, prefix, selected);
             ConsoleKey key = ConsoleKey.Spacebar;
+            #region main loop
             do
             {
                 key = Console.ReadKey(true).Key;
@@ -43,10 +44,10 @@ namespace CoolConsole
                 }
                 else if (key == ConsoleKey.Enter)
                 {
-                    if (list[selected].GetType() == "CheckboxMenuItem")
+                    if (list[selected].GetType() != "MenuItem")
                     {
-                        CheckboxMenuItem f = (CheckboxMenuItem)list[selected];
-                        f.ChangeChecked();
+                        MenuItem f = (MenuItem)list[selected];
+                        f.OnSelect();
                         list[selected] = f;
                     }
                     else
@@ -56,6 +57,7 @@ namespace CoolConsole
                 }
                 ReWrite(list, prefix, selected);
             } while (!exit);
+#endregion
             ReturnCode returnCode = new ReturnCode();
             int i = 0;
             foreach (var item in list)
@@ -63,7 +65,12 @@ namespace CoolConsole
                 if (item.GetType() == "CheckboxMenuItem")
                 {
                     CheckboxMenuItem f = (CheckboxMenuItem)item;
-                    returnCode.AddCheckedBox(new CheckBoxData(i,f.IsChecked));
+                    returnCode.AddCheckbox(new CheckboxData(i,f.IsChecked));
+                }
+                else if (item.GetType() == "TextboxMenuItem")
+                {
+                    TextboxMenuItem f = (TextboxMenuItem)item;
+                    returnCode.AddTextbox(new TextboxData(i, f.TextboxText));
                 }
                 i++;
             }

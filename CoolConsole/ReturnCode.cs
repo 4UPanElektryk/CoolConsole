@@ -5,26 +5,40 @@ namespace CoolConsole
     public class ReturnCode
     {
         public int SelectedMenuItem = 0;
-        public List<CheckBoxData> CheckBoxes;
-        public List<string> TextBoxes;
+        public List<CheckboxData> Checkboxes;
+        public List<TextboxData> Textboxes;
         public ReturnCode()
         {
-            CheckBoxes = new List<CheckBoxData>();
-            TextBoxes = new List<string>();
+            Checkboxes = new List<CheckboxData>();
+            Textboxes = new List<TextboxData>();
         }
-        public void AddCheckedBox(CheckBoxData checkedBox)
+        public void AddCheckbox(CheckboxData checkbox)
         {
-            CheckBoxes.Add(checkedBox);
+            Checkboxes.Add(checkbox);
+        }
+        public void AddTextbox(TextboxData textbox)
+        {
+            Textboxes.Add(textbox);
         }
     }
-    public class CheckBoxData
+    public class CheckboxData
     {
         public int _Index;
         public bool _Checked;
-        public CheckBoxData(int index, bool checkedState)
+        public CheckboxData(int index, bool checkedState)
         {
             _Index = index;
             _Checked = checkedState;
+        }
+    }
+    public class TextboxData
+    {
+        public int _Index;
+        public string _Text;
+        public TextboxData(int index, string text)
+        {
+            _Index = index;
+            _Text = text;
         }
     }
 }

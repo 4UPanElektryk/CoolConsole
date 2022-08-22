@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CoolConsole.MenuItemTemplate
 {
-    class TextboxMenuItem : MenuItem
+    public class TextboxMenuItem : MenuItem
     {
         public TextboxMenuItem(string text, string textboxText) : base(text)
         {
@@ -27,18 +27,11 @@ namespace CoolConsole.MenuItemTemplate
                 Console.Write("  ");
             }
             Console.Write("[");
-            if (IsChecked)
-            {
-                Console.Write("X");
-            }
-            else
-            {
-                Console.Write(" ");
-            }
+            Console.Write(TextboxText);
             Console.WriteLine("]" + _Text);
             Console.ResetColor();
         }
-        public void OnSelect()
+        public override void OnSelect()
         {
             Console.WriteLine("Enter text:");
             TextboxText = Console.ReadLine();

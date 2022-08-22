@@ -31,6 +31,7 @@ namespace CoolConsole.MenuItemTemplate
         {
             IsChecked = false;
         }
+
         public override void Write(bool selected, string prefix)
         {
             if (selected)
@@ -57,7 +58,7 @@ namespace CoolConsole.MenuItemTemplate
             Console.WriteLine("]" + _Text);
             Console.ResetColor();
         }
-        public void ChangeChecked()
+        public override void OnSelect()
         {
             IsChecked = !IsChecked;
         }

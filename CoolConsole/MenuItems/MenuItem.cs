@@ -27,6 +27,11 @@ namespace CoolConsole.MenuItemTemplate
             _Color = ConsoleColor.Gray;
             _BackgroundColor = ConsoleColor.Black;
         }
+        public virtual void OnSelect() 
+        {
+
+        }
+
         public virtual void Write(bool selected, string prefix)
         {
             if (selected)
