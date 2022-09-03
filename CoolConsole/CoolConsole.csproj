@@ -8,6 +8,7 @@
     <Owners>4UPanElektryk</Owners>
     <PackageProjectUrl>https://github.com/4UPanElektryk/CoolConsole</PackageProjectUrl>
     <Title>CoolConsole</Title>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>
