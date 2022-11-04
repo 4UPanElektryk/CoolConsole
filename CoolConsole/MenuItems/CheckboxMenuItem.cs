@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CoolConsole.MenuItemTemplate
+namespace CoolConsole.MenuItems
 {
     public class CheckboxMenuItem : MenuItem
     {

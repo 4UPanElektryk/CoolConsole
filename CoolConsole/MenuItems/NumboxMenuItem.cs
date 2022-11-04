@@ -4,14 +4,14 @@ using System.Text;
 
 namespace CoolConsole.MenuItems
 {
-    public class TextboxMenuItem : MenuItem
+    public class NumboxMenuItem : MenuItem
     {
-        public TextboxMenuItem(string text, string defaultValue) : base(text)
+        public NumboxMenuItem(string text, int defaultValue) : base(text)
         {
             Value = defaultValue;
         }
 
-        public string Value { get; set; }
+        public int Value { get; set; }
         public override void Write(bool selected, string prefix)
         {
             if (selected)
@@ -34,13 +34,18 @@ namespace CoolConsole.MenuItems
         public override void OnSelect()
         {
             Console.WriteLine("Enter text:");
-            Value = Console.ReadLine();
-            
+            string num = Console.ReadLine();
+            int g;
+            if (int.TryParse(num,out g))
+            {
+                Value = g;
+            }
         }
 
         public override string GetType()
         {
-            return "TextboxMenuItem";
+            return "NumboxMenuItem";
         }
     }
 }
+

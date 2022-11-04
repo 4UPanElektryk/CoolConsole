@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CoolConsole;
 using CoolConsole.Aditonal;
-using CoolConsole.MenuItemTemplate;
+using CoolConsole.MenuItems;
 
 namespace TestForCoolConsole
 {
@@ -14,7 +14,7 @@ namespace TestForCoolConsole
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            ProgressBar.show(1,10,20,true);
+            ProgressBar.Show(1,10,20,true);
             Console.ReadKey(true);
             List<MenuItem> texts = new List<MenuItem>()
             {
@@ -29,17 +29,22 @@ namespace TestForCoolConsole
                 new CheckboxMenuItem("UnselectedCheckbox4", false),
                 new CheckboxMenuItem("UnselectedCheckbox5", false),
                 new TextboxMenuItem("TextInput1","wow"),
+                new NumboxMenuItem("noice",69),
                 new MenuItem("Submit")
             };
             ReturnCode i = Menu.Show(texts);
             foreach (var item in i.Checkboxes)
             {
                 Console.WriteLine("Setting " + texts[item._Index]._Text);
-                Console.WriteLine("Is set to " + item._Checked);
+                Console.WriteLine("Is set to " + item._Value);
             }
             foreach (var item in i.Textboxes)
             {
-                Console.WriteLine(item._Text);
+                Console.WriteLine(item._Value);
+            }
+            foreach (var item in i.Numboxes)
+            {
+                Console.WriteLine(item._Value);
             }
             Console.ReadKey();
         }

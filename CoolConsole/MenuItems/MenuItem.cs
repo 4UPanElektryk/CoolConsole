@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CoolConsole.MenuItemTemplate
+namespace CoolConsole.MenuItems
 {
     public class MenuItem
     {
@@ -49,7 +49,7 @@ namespace CoolConsole.MenuItemTemplate
             Console.WriteLine(_Text);
             Console.ResetColor();
         }
-        public virtual string GetType()
+        public new virtual string GetType()
         {
             return "MenuItem";
         }

@@ -1,4 +1,4 @@
-﻿using CoolConsole.MenuItemTemplate;
+﻿using CoolConsole.MenuItems;
 using System;
 using System.Collections.Generic;
 
@@ -70,7 +70,12 @@ namespace CoolConsole
                 else if (item.GetType() == "TextboxMenuItem")
                 {
                     TextboxMenuItem f = (TextboxMenuItem)item;
-                    returnCode.AddTextbox(new TextboxData(i, f.TextboxText));
+                    returnCode.AddTextbox(new TextboxData(i, f.Value));
+                }
+                else if (item.GetType() == "NumboxMenuItem")
+                {
+                    NumboxMenuItem f = (NumboxMenuItem)item;
+                    returnCode.AddNumbox(new NumboxData(i, f.Value));
                 }
                 i++;
             }
