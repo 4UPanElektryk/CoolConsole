@@ -61,11 +61,11 @@ namespace CoolConsole.Aditonal
 
             if (showprocentage)
             {
-                Console.Write(procentage + "%");
+                Console.WriteLine(procentage + "%");
             }
             else
             {
-                Console.Write(done + "/" + goal);
+                Console.WriteLine(done + "/" + goal);
             }
 
         }
