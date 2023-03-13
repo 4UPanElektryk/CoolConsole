@@ -31,7 +31,10 @@ namespace CoolConsole.MenuItems
         {
 
         }
-
+        public virtual string GetType()
+        {
+            return "MenuItem";
+        }
         public virtual void Write(bool selected, string prefix)
         {
             if (selected)
@@ -48,10 +51,6 @@ namespace CoolConsole.MenuItems
             }
             Console.WriteLine(_Text);
             Console.ResetColor();
-        }
-        public new virtual string GetType()
-        {
-            return "MenuItem";
         }
     }
 }

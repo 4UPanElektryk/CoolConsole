@@ -15,7 +15,7 @@ namespace CoolConsole
             int selected = 0;
             bool exit = false;
             ReWrite(list, prefix, selected);
-            ConsoleKey key = ConsoleKey.Spacebar;
+            ConsoleKey key;
             #region main loop
             do
             {
@@ -44,46 +44,51 @@ namespace CoolConsole
                 }
                 else if (key == ConsoleKey.Enter)
                 {
-                    if (list[selected].GetType() != "MenuItem")
+                    if (list[selected].GetType() == "MenuItem")
+                    {
+                        exit = true;
+                    }
+                    else
                     {
                         MenuItem f = (MenuItem)list[selected];
                         f.OnSelect();
                         list[selected] = f;
                     }
-                    else
-                    {
-                        exit = true;
-                    }
                 }
                 ReWrite(list, prefix, selected);
             } while (!exit);
-#endregion
-            ReturnCode returnCode = new ReturnCode();
-            int i = 0;
+			#endregion
+			#region Returning Data
+			ReturnCode returnCode = new ReturnCode();
             foreach (var item in list)
             {
                 if (item.GetType() == "CheckboxMenuItem")
                 {
                     CheckboxMenuItem f = (CheckboxMenuItem)item;
-                    returnCode.AddCheckbox(new CheckboxData(i,f.IsChecked));
+                    returnCode.Checkboxes.Add(f.IsChecked);
                 }
                 else if (item.GetType() == "TextboxMenuItem")
                 {
                     TextboxMenuItem f = (TextboxMenuItem)item;
-                    returnCode.AddTextbox(new TextboxData(i, f.Value));
+                    returnCode.Textboxes.Add(f.Value);
                 }
                 else if (item.GetType() == "NumboxMenuItem")
                 {
                     NumboxMenuItem f = (NumboxMenuItem)item;
-                    returnCode.AddNumbox(new NumboxData(i, f.Value));
+                    returnCode.Numboxes.Add(f.Value);
                 }
-                i++;
+                else if (item.GetType() == "SubMenuMenuItem")
+                {
+                    SubMenuMenuItem f = (SubMenuMenuItem)item;
+                    returnCode.SubMenues.Add(f.returnCode);
+                }
             }
             returnCode.SelectedMenuItem = selected;
             Console.Clear();
             return returnCode;
-        }
-        private static void ReWrite(List<MenuItem> list, string prefix, int selected)
+#endregion
+		}
+		private static void ReWrite(List<MenuItem> list, string prefix, int selected)
         {
             int index = 0;
             Console.Clear();

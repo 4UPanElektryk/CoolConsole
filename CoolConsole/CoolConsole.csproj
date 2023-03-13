@@ -8,7 +8,9 @@
     <Owners>4UPanElektryk</Owners>
     <PackageProjectUrl>https://github.com/4UPanElektryk/CoolConsole</PackageProjectUrl>
     <Title>CoolConsole</Title>
-    <Version>1.1.1</Version>
+    <Version>1.3.0</Version>
+    <Authors>4UPanElektryk</Authors>
+    <Description>Added submenus</Description>
   </PropertyGroup>
 
 </Project>

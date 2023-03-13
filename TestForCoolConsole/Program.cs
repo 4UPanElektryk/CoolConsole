@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CoolConsole;
 using CoolConsole.Aditonal;
 using CoolConsole.MenuItems;
@@ -16,7 +13,7 @@ namespace TestForCoolConsole
             Console.WriteLine("Hello World!");
             ProgressBar.Show(1,10,20,true);
             Console.ReadKey(true);
-            List<MenuItem> texts = new List<MenuItem>()
+            List<MenuItem> texts = new List<MenuItem>
             {
                 new CheckboxMenuItem("SelectedCheckbox1", true),
                 new CheckboxMenuItem("SelectedCheckbox2", true),
@@ -30,23 +27,43 @@ namespace TestForCoolConsole
                 new CheckboxMenuItem("UnselectedCheckbox5", false),
                 new TextboxMenuItem("TextInput1","wow"),
                 new NumboxMenuItem("noice",69),
+                new SubMenuMenuItem("Menu++")
+                {
+                    items = new List<MenuItem>
+                    {
+						new CheckboxMenuItem("UnselectedCheckbox2", false),
+				        new CheckboxMenuItem("UnselectedCheckbox3", false),
+				        new CheckboxMenuItem("UnselectedCheckbox4", false),
+				        new CheckboxMenuItem("UnselectedCheckbox5", false),
+				        new TextboxMenuItem("TextInput1","wow"),
+				        new NumboxMenuItem("noice",69),
+						new MenuItem("Submit")
+					}
+                },
                 new MenuItem("Submit")
             };
             ReturnCode i = Menu.Show(texts);
-            foreach (var item in i.Checkboxes)
-            {
-                Console.WriteLine("Setting " + texts[item._Index]._Text);
-                Console.WriteLine("Is set to " + item._Value);
-            }
-            foreach (var item in i.Textboxes)
-            {
-                Console.WriteLine(item._Value);
-            }
-            foreach (var item in i.Numboxes)
-            {
-                Console.WriteLine(item._Value);
-            }
+            GetRetCode(i);
             Console.ReadKey();
         }
+        public static void GetRetCode(ReturnCode returnCode)
+        {
+			foreach (var item in returnCode.Checkboxes)
+			{
+				Console.WriteLine(item);
+			}
+			foreach (var item in returnCode.Textboxes)
+			{
+				Console.WriteLine(item);
+			}
+			foreach (var item in returnCode.Numboxes)
+			{
+				Console.WriteLine(item);
+			}
+			foreach (var item in returnCode.SubMenues)
+            {
+                GetRetCode(item);
+            }
+		}
     }
 }

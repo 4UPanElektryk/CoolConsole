@@ -10,7 +10,6 @@ namespace CoolConsole.MenuItems
         {
             Value = defaultValue;
         }
-
         public int Value { get; set; }
         public override void Write(bool selected, string prefix)
         {
@@ -31,7 +30,11 @@ namespace CoolConsole.MenuItems
             Console.WriteLine("]" + _Text);
             Console.ResetColor();
         }
-        public override void OnSelect()
+		public override string GetType()
+		{
+			return "NumboxMenuItem";
+		}
+		public override void OnSelect()
         {
             Console.WriteLine("Enter text:");
             string num = Console.ReadLine();
@@ -40,11 +43,6 @@ namespace CoolConsole.MenuItems
             {
                 Value = g;
             }
-        }
-
-        public override string GetType()
-        {
-            return "NumboxMenuItem";
         }
     }
 }

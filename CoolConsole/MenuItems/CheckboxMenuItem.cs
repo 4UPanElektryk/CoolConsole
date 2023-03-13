@@ -31,8 +31,11 @@ namespace CoolConsole.MenuItems
         {
             IsChecked = false;
         }
-
-        public override void Write(bool selected, string prefix)
+		public override string GetType()
+		{
+			return "CheckboxMenuItem";
+		}
+		public override void Write(bool selected, string prefix)
         {
             if (selected)
             {
@@ -61,10 +64,6 @@ namespace CoolConsole.MenuItems
         public override void OnSelect()
         {
             IsChecked = !IsChecked;
-        }
-        public override string GetType()
-        {
-            return "CheckboxMenuItem";
         }
     }
 }

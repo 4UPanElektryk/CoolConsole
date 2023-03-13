@@ -12,7 +12,11 @@ namespace CoolConsole.MenuItems
         }
 
         public string Value { get; set; }
-        public override void Write(bool selected, string prefix)
+		public override string GetType()
+		{
+			return "TextboxMenuItem";
+		}
+		public override void Write(bool selected, string prefix)
         {
             if (selected)
             {
@@ -36,11 +40,6 @@ namespace CoolConsole.MenuItems
             Console.WriteLine("Enter text:");
             Value = Console.ReadLine();
             
-        }
-
-        public override string GetType()
-        {
-            return "TextboxMenuItem";
         }
     }
 }
