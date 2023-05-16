@@ -17,7 +17,7 @@ namespace TestForCoolConsole
             {
                 new CheckboxMenuItem("SelectedCheckbox1", true),
                 new CheckboxMenuItem("SelectedCheckbox2", true),
-                new CheckboxMenuItem("SelectedCheckbox3", true),
+                new CheckboxMenuItem("SelectedCheckbox3",ConsoleColor.Red, true),
                 new CheckboxMenuItem("SelectedCheckbox4", true),
                 new CheckboxMenuItem("SelectedCheckbox5", true),
                 new CheckboxMenuItem("UnselectedCheckbox1", false),

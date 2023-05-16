@@ -36,7 +36,7 @@ namespace CoolConsole.MenuItems
 		}
 		public override void OnSelect()
         {
-            Console.WriteLine("Enter text:");
+            Console.WriteLine("Enter a number:");
             string num = Console.ReadLine();
             int g;
             if (int.TryParse(num,out g))
