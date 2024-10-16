@@ -31,10 +31,6 @@ namespace CoolConsole.MenuItems
         {
 
         }
-        public virtual string GetType()
-        {
-            return "MenuItem";
-        }
         public virtual void Write(bool selected, string prefix)
         {
             if (selected)

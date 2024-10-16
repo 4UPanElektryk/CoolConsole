@@ -30,10 +30,6 @@ namespace CoolConsole.MenuItems
             Console.WriteLine("]" + _Text);
             Console.ResetColor();
         }
-		public override string GetType()
-		{
-			return "NumboxMenuItem";
-		}
 		public override void OnSelect()
         {
             Console.WriteLine("Enter a number:");

@@ -16,10 +16,6 @@ namespace CoolConsole.MenuItems
             Console.Clear();
             returnCode = Menu.Show(items);
         }
-		public override string GetType()
-		{
-			return "SubMenuMenuItem";
-		}
 		public override void Write(bool selected, string prefix) 
         {
             if (selected) {

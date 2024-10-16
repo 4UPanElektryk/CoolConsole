@@ -12,10 +12,6 @@ namespace CoolConsole.MenuItems
         }
 
         public string Value { get; set; }
-		public override string GetType()
-		{
-			return "TextboxMenuItem";
-		}
 		public override void Write(bool selected, string prefix)
         {
             if (selected)

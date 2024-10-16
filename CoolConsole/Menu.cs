@@ -44,7 +44,7 @@ namespace CoolConsole
                 }
                 else if (key == ConsoleKey.Enter)
                 {
-                    if (list[selected].GetType() == "MenuItem")
+                    if (list[selected].GetType() == typeof(MenuItem))
                     {
                         exit = true;
                     }
@@ -62,22 +62,22 @@ namespace CoolConsole
 			ReturnCode returnCode = new ReturnCode();
             foreach (var item in list)
             {
-                if (item.GetType() == "CheckboxMenuItem")
+                if (item.GetType() == typeof(CheckboxMenuItem))
                 {
                     CheckboxMenuItem f = (CheckboxMenuItem)item;
                     returnCode.Checkboxes.Add(f.IsChecked);
                 }
-                else if (item.GetType() == "TextboxMenuItem")
+                else if (item.GetType() == typeof(TextboxMenuItem))
                 {
                     TextboxMenuItem f = (TextboxMenuItem)item;
                     returnCode.Textboxes.Add(f.Value);
                 }
-                else if (item.GetType() == "NumboxMenuItem")
+                else if (item.GetType() == typeof(NumboxMenuItem))
                 {
                     NumboxMenuItem f = (NumboxMenuItem)item;
                     returnCode.Numboxes.Add(f.Value);
                 }
-                else if (item.GetType() == "SubMenuMenuItem")
+                else if (item.GetType() == typeof(SubMenuMenuItem))
                 {
                     SubMenuMenuItem f = (SubMenuMenuItem)item;
                     returnCode.SubMenues.Add(f.returnCode);
